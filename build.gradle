@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group 'com.liferay.blockchain.example'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	
+	implementation group: 'org.apache.groovy', name: 'groovy', version: '4.0.11'
+	implementation group: 'org.apache.groovy', name: 'groovy-json', version: '4.0.11'
+	
+	implementation group: "com.liferay", name: "com.liferay.client.extension.util.spring.boot", version: "1.0.2"
+	implementation group: "com.liferay", name: "com.liferay.headless.admin.user.client", version: "4.0.40"
+	implementation group: "com.liferay", name: "com.liferay.headless.delivery.client", version: "4.0.52"
+	implementation group: 'com.liferay.commerce', name: 'com.liferay.headless.commerce.admin.order.client', version: '4.0.28'
+	
+	implementation 'javax.json:javax.json-api:1.1.4'
+	implementation 'org.glassfish:javax.json:1.1.4'
+	
+	implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+	
+	implementation group: 'com.liferay.portal', name: 'release.dxp.api', version: '7.4.13.u69'
+	
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.2'
+	
+}
+
+test {
+    // configuração do teste
+    useJUnitPlatform()
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+compileGroovy {
+    options.encoding = 'UTF-8'
+}
